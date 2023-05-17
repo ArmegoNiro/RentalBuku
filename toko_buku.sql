@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 10, 2019 at 04:02 PM
+-- Generation Time: Mar 11, 2023 at 6:50 PM
 -- Server version: 5.7.25-0ubuntu0.16.04.2
 -- PHP Version: 7.0.32-0ubuntu0.16.04.1
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `freeapp_tokobuku`
+-- Database: `toko_buku`
 --
 
 -- --------------------------------------------------------
@@ -63,20 +63,6 @@ CREATE TABLE `distributor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `distributor`
---
-
-INSERT INTO `distributor` (`iddistributor`, `namadistributor`, `alamat`, `telepon`) VALUES
-('A11213BAC1', 'ragamulia', 'jalan utama gang cipta', '0853632164'),
-('A11ABAB4B3', 'tuti desiwati', 'jalan utama gang cipta', '08536651746'),
-('A1ABB12B31', 'kiko', 'jalan utama gna cipta', '08536123'),
-('A1BBA2CA31', 'satria', 'jalan utama gang cipta', '086123'),
-('AAB123ADD1', 'tuti sikampret', 'jalan ssssssss', '085366555'),
-('AAB1BC2A12', 'bima sakti', 'jalan utama gang cipta tenayan raya', '085363211');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `kasir`
 --
 
@@ -91,7 +77,7 @@ CREATE TABLE `kasir` (
 --
 
 INSERT INTO `kasir` (`nama`, `username`, `password`) VALUES
-('Raga mulia kusuma', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997');
+('Admin Toko', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997');
 
 -- --------------------------------------------------------
 
@@ -106,14 +92,6 @@ CREATE TABLE `pasok` (
   `jumlah` tinyint(4) DEFAULT NULL,
   `tanggal` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `pasok`
---
-
-INSERT INTO `pasok` (`idpasok`, `idbuku`, `iddistributor`, `jumlah`, `tanggal`) VALUES
-(37, 'AAB1BAC1A5', 'A11213BAC1', 1, '2019-03-10 15:41:08'),
-(38, 'A1BAC2DACA', 'A1ABB12B31', 50, '2019-03-10 15:41:35');
 
 --
 -- Triggers `pasok`
@@ -139,20 +117,6 @@ CREATE TABLE `penjualan` (
   `total` int(3) DEFAULT NULL,
   `tanggal` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `penjualan`
---
-
-INSERT INTO `penjualan` (`idpenjualan`, `idbuku`, `idkasir`, `jumlah`, `total`, `tanggal`) VALUES
-(3, 'A1BAC2DACA', 'admin', 2, 2200000, '2019-03-10 15:51:02'),
-(4, 'AAB1BAC1A5', 'admin', 2, 2200000, '2019-03-10 15:51:02'),
-(5, 'A1BAC2DACA', 'admin', 2, 1100000, '2019-03-10 15:52:00'),
-(6, 'A1BAC2DACA', 'admin', 2, 2200000, '2019-03-10 15:53:24'),
-(7, 'AAB1BAC1A5', 'admin', 2, 2200000, '2019-03-10 15:53:24'),
-(8, 'A1BAC2DACA', 'admin', 2, 2200000, '2019-03-10 15:56:16'),
-(9, 'A1BAC2DACA', 'admin', 2, 2200000, '2019-03-10 15:57:59'),
-(10, 'AAB1BAC1A5', 'admin', 2, 2200000, '2019-03-10 15:59:54');
 
 --
 -- Triggers `penjualan`
